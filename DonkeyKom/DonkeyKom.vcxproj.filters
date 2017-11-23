@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="memory_manager.cpp" />
+    <ClCompile Include="driver_manager.cpp" />
+    <ClCompile Include="donkey_kom.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="memory_manager.hpp" />
+    <ClInclude Include="memory_manager_internal.hpp" />
+    <ClInclude Include="driver_manager.hpp" />
+    <ClInclude Include="donkey_kom.hpp" />
+    <ClInclude Include="donkey_kom_internal.hpp" />
+  </ItemGroup>
+</Project>
