@@ -2,15 +2,23 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="memory_manager.cpp" />
-    <ClCompile Include="driver_manager.cpp" />
-    <ClCompile Include="donkey_kom.cpp" />
+    <ClCompile Include="dk\dk.cpp" />
+    <ClCompile Include="dk\driver.cpp" />
+    <ClCompile Include="dk\memory.cpp" />
+    <ClCompile Include="dk\patcher.cpp" />
+    <ClCompile Include="uac.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="memory_manager.hpp" />
-    <ClInclude Include="memory_manager_internal.hpp" />
-    <ClInclude Include="driver_manager.hpp" />
-    <ClInclude Include="donkey_kom.hpp" />
-    <ClInclude Include="donkey_kom_internal.hpp" />
+    <ClInclude Include="dk\driver.hpp" />
+    <ClInclude Include="dk\dk.hpp" />
+    <ClInclude Include="dk\internal.hpp" />
+    <ClInclude Include="dk\memory.hpp" />
+    <ClInclude Include="dk\patcher.hpp" />
+    <ClInclude Include="uac.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="dk">
+      <UniqueIdentifier>{57263ddb-16a7-4ea2-9623-7e320b3ef0c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

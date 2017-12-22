@@ -1,11 +1,6 @@
 #pragma once
-#include <windows.h>
-#include <winternl.h>
-#include <AccCtrl.h>
-#include <Aclapi.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdexcept>
+#include <Windows.h>
+#include <cstdint>
 
 typedef struct _OBJECT_HEADER
 {
@@ -52,13 +47,21 @@ typedef struct _OBJECT_HEADER
 	PVOID	Body;
 } OBJECT_HEADER, *POBJECT_HEADER;
 
-extern "C" VOID RtlInitUnicodeString(
-	_Out_    PUNICODE_STRING DestinationString,
-	_In_opt_ PCWSTR          SourceString
-);
+namespace dk {
+	struct object_patcher {
+		object_patcher(POBJECT_HEADER header);
+		~object_patcher();
 
-extern "C" NTSTATUS ZwOpenSection(
-	_Out_ PHANDLE            SectionHandle,
-	_In_  ACCESS_MASK        DesiredAccess,
-	_In_  POBJECT_ATTRIBUTES ObjectAttributes
-);
+	private:
+		POBJECT_HEADER header_;
+	};
+
+	struct acl_patcher {
+		acl_patcher(HANDLE handle);
+		~acl_patcher();
+
+	private:
+		HANDLE handle_;
+		PACL previous_dacl_;
+	};
+}

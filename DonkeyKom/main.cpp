@@ -1,15 +1,28 @@
 #include <Windows.h>
 #include <iostream>
+#include <stdexcept>
+#include "dk/dk.hpp"
+#include "uac.hpp"
 
-#include "donkey_kom.hpp"
-
-
-int main() {
+int main(int argc, char *argv[]) {
 	try {
-		dk::initialize();
+		// Check process elevation and elevate as necessary using token manipulation
+		if (can_be_elevated()) {
+			std::cout << "Process is not fully elevated; attempting elevation" << std::endl;
+			elevate(GetCommandLineW());
+			return EXIT_SUCCESS;
+		}
+
+		std::cout << "Initializing DKOM" << std::endl;
+
+		dk::donkey_kom dkom;
+
+		system("pause");
+
+		std::cout << "Uninitializing DKOM" << std::endl;
 	}
 	catch (std::exception ex) {
-		std::cerr << ex.what() << std::endl;
+		std::cerr << "[ERROR] " << ex.what() << std::endl;
 	}
 
 	system("pause");
