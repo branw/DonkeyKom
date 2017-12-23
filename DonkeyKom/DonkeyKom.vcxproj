@@ -77,7 +77,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(ProjectDir)asmmap64.sys" "$(TargetDir)"</Command>
@@ -90,7 +90,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(ProjectDir)asmmap64.sys" "$(TargetDir)"</Command>
@@ -107,7 +107,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(ProjectDir)asmmap64.sys" "$(TargetDir)"</Command>
@@ -124,7 +124,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(ProjectDir)asmmap64.sys" "$(TargetDir)"</Command>
@@ -135,7 +135,6 @@
     <ClCompile Include="dk\driver.cpp" />
     <ClCompile Include="dk\memory.cpp" />
     <ClCompile Include="dk\patcher.cpp" />
-    <ClCompile Include="uac.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +143,6 @@
     <ClInclude Include="dk\driver.hpp" />
     <ClInclude Include="dk\memory.hpp" />
     <ClInclude Include="dk\patcher.hpp" />
-    <ClInclude Include="uac.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
